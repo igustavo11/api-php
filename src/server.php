@@ -8,7 +8,7 @@ $port = getenv('PORT');
 
 
 //CRIAR ENDPOINTS para a chamada da api estao em repositories
-//get save
+//get find
 //post save
 //put update
 //delete delete
