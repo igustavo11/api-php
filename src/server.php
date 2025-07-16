@@ -1,4 +1,5 @@
 <?php
+//teste
 
 // Define que a resposta será em JSON
 header("Content-Type: application/json");
