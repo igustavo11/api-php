@@ -7,7 +7,15 @@ class ProductRepository {
     private \PDO $pdo;
 
     public function __construct() {
-        $this->pdo = new \PDO('sqlite:' . __DIR__ . '/../db/sqlite.db');
+        $host = getenv('DB_HOST');
+        $port = getenv('DB_PORT');
+        $dbname = getenv('DB_NAME');
+        $user = getenv('DB_USER');
+        $password = getenv('DB_PASSWORD');
+        
+        $dsn = "pgsql:host=$host;port=$port;dbname=$dbname;";
+        $this->pdo = new \PDO($dsn, $user, $password);
+        $this->pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
     }
 
     public function findAll(): array {
