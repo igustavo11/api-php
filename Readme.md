@@ -1,6 +1,26 @@
-# Desafio Integrador: Sistema de Controle de Estoque com Relatório de Reposição
+# 🛡️ Guardião do Estoque
 
-## 📦 Guardião do Estoque - API REST
+## 💡 Desafio Proposto
+
+### Desafio Integrador: Sistema de Controle de Estoque com Relatório de Reposição
+
+Uma loja de materiais elétricos precisa de um sistema simples em PHP que liste os produtos cadastrados, seus respectivos estoques e identifique automaticamente quais produtos precisam de reposição (quando o estoque estiver abaixo de 10 unidades).
+
+O gestor da loja também deseja visualizar:
+
+- A lista total de produtos e seus estoques.
+- A média de estoque da loja.
+- Quais produtos estão abaixo do estoque mínimo.
+- A porcentagem de produtos que precisam de reposição.
+
+**Requisitos funcionais:**
+
+- Exibir todos os produtos e seus estoques usando `foreach` ou `for`.
+- Calcular e exibir a **média de estoque** dos produtos.
+- Listar os produtos com estoque **inferior a 10 unidades**.
+- Calcular a **porcentagem de produtos abaixo do estoque mínimo**.
+- Exibir um aviso ao lado dos produtos que precisam de reposição: `"⚠ Repor estoque"`.
+
 
 Este projeto é a **API REST** do sistema Guardião do Estoque, responsável por fornecer dados para o frontend. O frontend consome esta API para exibir relatórios, produtos e avisos de reposição em tempo real.
 
