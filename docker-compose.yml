@@ -6,5 +6,26 @@ services:
     environment:
       HOST: 0.0.0.0
       PORT: 8000
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: api_database
+      DB_USER: postgres
+      DB_PASSWORD: postgres
     volumes:
       - .:/usr/src/php-api
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: api_database
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
