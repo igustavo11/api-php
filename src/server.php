@@ -1,9 +1,17 @@
 <?php
 //teste
 
-// Define que a resposta será em JSON
+// cors config (para prod/dev)
 header("Content-Type: application/json");
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
 
+// res/req test
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit();
+}
 // Inclui os arquivos necessários
 require_once __DIR__ . '/repositories/productRepository.php';
 require_once __DIR__ . '/models/product.php';
