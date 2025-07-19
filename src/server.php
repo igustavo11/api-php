@@ -29,7 +29,7 @@ $path = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH) ?? '';
 $method = $_SERVER['REQUEST_METHOD'];
 
 // GET /products - Lista todos os produtos
-if ($path === '/products' && $method === 'GET') {
+if (preg_match('#^/products/?$#', $path) && $method === 'GET') {
     $produtos = $productRepository->findAll();
     $resposta = [];
     foreach ($produtos as $produto) {
