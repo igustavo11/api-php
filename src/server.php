@@ -27,6 +27,7 @@ $productRepository = new ProductRepository();
 // Pega o caminho e o método da requisição
 $path = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH) ?? '';
 $method = $_SERVER['REQUEST_METHOD'];
+error_log('PATH: ' . $path . ' METHOD: ' . $method);
 
 // GET /products - Lista todos os produtos
 if (preg_match('#^/products/?$#', $path) && $method === 'GET') {
