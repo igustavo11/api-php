@@ -109,3 +109,5 @@ A API REST retorna dados em formato **JSON** para fácil integração com o fron
 Este projeto está licenciado sob a licença **MIT**. Veja o arquivo `LICENSE` para mais detalhes.
 
 ---
+
+docs: https://www.notion.so/gustavin-programacao/Docs-Projeto-final-curso-de-PHP-234f4c0bd05c809eb5e5cbc958a8468b
