@@ -19,7 +19,7 @@ class ProductRepository {
     }
 
     public function findAll(): array {
-        $query = $this->pdo->query('SELECT * FROM products');
+        $query = $this->pdo->query('SELECT * FROM products ORDER BY id DESC');
         $products = [];
         while ($row = $query->fetch(\PDO::FETCH_ASSOC)) {
             $products[] = new Product($row['id'], $row['name'], $row['stock']);
