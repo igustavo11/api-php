@@ -1,6 +1,11 @@
 <?php
 //teste
 
+
+ini_set('display_errors', 0);
+ini_set('display_startup_errors', 0);
+error_reporting(E_ALL & ~E_DEPRECATED & ~E_WARNING);
+
 // cors config (para prod/dev)
 header("Content-Type: application/json");
 header("Access-Control-Allow-Origin: *");
@@ -20,7 +25,7 @@ require_once __DIR__ . '/models/product.php';
 $productRepository = new ProductRepository();
 
 // Pega o caminho e o método da requisição
-$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$path = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH) ?? '';
 $method = $_SERVER['REQUEST_METHOD'];
 
 // GET /products - Lista todos os produtos
