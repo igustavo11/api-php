@@ -29,6 +29,12 @@ $path = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH) ?? '';
 $method = $_SERVER['REQUEST_METHOD'];
 error_log('PATH: ' . $path . ' METHOD: ' . $method);
 
+// Redireciona / para /products
+if ($path === '/' && $method === 'GET') {
+    header('Location: /products');
+    exit();
+}
+
 // GET /products - Lista todos os produtos
 if (preg_match('#^/products/?$#', $path) && $method === 'GET') {
     $produtos = $productRepository->findAll();
